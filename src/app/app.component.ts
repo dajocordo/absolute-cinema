@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+import { DialogModule } from 'primeng/dialog';
 import { MenubarModule } from 'primeng/menubar';
 
 @Component({
@@ -12,12 +13,15 @@ import { MenubarModule } from 'primeng/menubar';
     RouterOutlet,
     ButtonModule,
     CardModule,
+    DialogModule,
     MenubarModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
+
 export class AppComponent {
+  displayModal: boolean = false;
   title = 'absolute-cinema';
     items: any = [
     {
@@ -59,4 +63,20 @@ export class AppComponent {
       poster: 'images/poster-4.png'
     }
   ];
+  movie: {
+    title: string,
+    year: string,
+    poster: string,
+  } = {
+    title: '',
+    year: '',
+    poster: '',
+  }
+
+  public getMovie(movie: any) {
+    this.movie = movie;
+    this.displayModal = true;
+  }
+  
+
 }
