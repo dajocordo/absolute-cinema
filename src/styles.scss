@@ -3,3 +3,25 @@ body {
     background-color: black;
     color: white;
 }
+
+.section-title {
+    font-size: 36px;
+}
+
+.p-menubar {
+    background-color: transparent !important;
+    backdrop-filter: blur(50px) !important;
+    border: none !important;
+    position: sticky;
+    /* o fixed */
+    top: 0;
+    z-index: 1000;
+    /* asegura que quede encima del contenido */
+}
+
+
+.custom-menubar .p-menubar-root-list {
+    justify-content: center !important;
+    /* centra horizontalmente */
+    width: 100% !important;
+}
